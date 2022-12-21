@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{45624D28-7CEC-4D70-83D9-F9AFB64F1739}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameTraktor", "GameTraktor\GameTraktor.vcxproj", "{FEBCDE78-BF07-4995-9677-6A6E32513F30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEBCDE78-BF07-4995-9677-6A6E32513F30}.Debug|x64.ActiveCfg = Debug|x64
+		{FEBCDE78-BF07-4995-9677-6A6E32513F30}.Debug|x64.Build.0 = Debug|x64
+		{FEBCDE78-BF07-4995-9677-6A6E32513F30}.Release|x64.ActiveCfg = Release|x64
+		{FEBCDE78-BF07-4995-9677-6A6E32513F30}.Release|x64.Build.0 = Release|x64
+		{45624D28-7CEC-4D70-83D9-F9AFB64F1739}.Debug|x64.ActiveCfg = Debug|x64
+		{45624D28-7CEC-4D70-83D9-F9AFB64F1739}.Debug|x64.Build.0 = Debug|x64
+		{45624D28-7CEC-4D70-83D9-F9AFB64F1739}.Release|x64.ActiveCfg = Release|x64
+		{45624D28-7CEC-4D70-83D9-F9AFB64F1739}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CCED953-BCE1-4807-B9D4-B8F713840851}
+	EndGlobalSection
+EndGlobal
