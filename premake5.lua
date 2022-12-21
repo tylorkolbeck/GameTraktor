@@ -10,6 +10,12 @@ workspace "GameTraktor"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "GameTraktor/vendor/GLFW/include"
+
+include "GameTraktor/vendor/GLFW"
+
 project "GameTraktor"
 	location "GameTraktor"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "GameTraktor"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -51,10 +64,12 @@ project "GameTraktor"
 	filter "configurations:Debug"
 		defines "GT_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines "GT_RELEASE"
 		optimize "On"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
 		defines "GT_DIST"
@@ -106,5 +121,3 @@ project "Sandbox"
 	filter "configurations:Dist"
 		defines "GT_DIST"
 		optimize "On"
-
-
