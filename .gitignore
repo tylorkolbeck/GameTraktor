@@ -4,3 +4,9 @@ bin-int/
 
 *.vcxproj
 *.user
+/GameTraktor/GameTraktor.vcxproj
+/GameTraktor/GameTraktor.vcxproj.filters
+/GameTraktor/GameTraktor.vcxproj.user
+/GameTraktor.sln
+/Sandbox/Sandbox.vcxproj.user
+/Sandbox/Sandbox.vcxproj
