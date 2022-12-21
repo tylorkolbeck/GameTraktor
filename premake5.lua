@@ -8,7 +8,7 @@ workspace "GameTraktor"
 		"Dist"
 	}
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-${cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "GameTraktor"
 	location "GameTraktor"
@@ -20,11 +20,11 @@ project "GameTraktor"
 
 	files
 	{
-		"%{prj.name}/src/**.h"
+		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	include
+	includedirs
 	{
 		"%{prj.name}/vendor/spdlog/include"
 	}
@@ -66,13 +66,13 @@ project "Sandbox"
 
 	files
 	{
-		"%{prj.name}/src/**.h"
+		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	include
+	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include",
+		"GameTraktor/vendor/spdlog/include",
 		"GameTraktor/src"
 	}
 
