@@ -1,0 +1,3 @@
+[submodule "GameTraktor/vendor/spdlog"]
+	path = GameTraktor/vendor/spdlog
+	url = https://github.com/gabime/spdlog
