@@ -21,7 +21,7 @@ namespace GameTraktor {
 		// Key Events
 		KeyPressed, KeyReleased, 
 		// Mouse Events
-		MouseButtonPressed, MousbuttonReleased, MouseMoved, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type;  }\
