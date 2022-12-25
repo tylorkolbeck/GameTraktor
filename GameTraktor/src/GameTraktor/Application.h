@@ -2,6 +2,7 @@
 #include "Core.h"
 #include "Events/Event.h"
 #include "Window.h"
+#include "GameTraktor/Events/ApplicationEvent.h"
 
 namespace GameTraktor {
 	class GT_API Application 
@@ -14,6 +15,8 @@ namespace GameTraktor {
 
 		void OnEvent(Event& e);
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 	};
