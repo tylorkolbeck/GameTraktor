@@ -73,6 +73,7 @@ project "GameTraktor"
 
 	filter "configurations:Dist"
 		defines "GT_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"

@@ -49,9 +49,15 @@ namespace GameTraktor {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
+
 		inline bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
+		}
+
+		bool IsHandled()
+		{
+			return m_Handled;
 		}
 	protected:
 		bool m_Handled = false;
