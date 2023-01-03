@@ -21,7 +21,7 @@ namespace GameTraktor {
 		// Key Events
 		KeyPressed, KeyReleased, 
 		// Mouse Events
-		MouseButtonPressed, MousbuttonReleased, MouseMoved, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type;  }\
@@ -49,9 +49,15 @@ namespace GameTraktor {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
+
 		inline bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
+		}
+
+		bool IsHandled()
+		{
+			return m_Handled;
 		}
 	protected:
 		bool m_Handled = false;

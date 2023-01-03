@@ -10,6 +10,14 @@ workspace "GameTraktor"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "GameTraktor/vendor/GLFW/include"
+IncludeDir["Glad"] = "GameTraktor/vendor/Glad/include"
+
+include "GameTraktor/vendor/GLFW"
+include "GameTraktor/vendor/Glad"
+
 project "GameTraktor"
 	location "GameTraktor"
 	kind "SharedLib"
@@ -30,7 +38,16 @@ project "GameTraktor"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
+	}
+
+	links
+	{
+		"GLFW",
+		"Glad",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -41,7 +58,8 @@ project "GameTraktor"
 		defines
 		{
 			"GT_PLATFORM_WINDOWS",
-			"GT_BUILD_DLL"
+			"GT_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -51,13 +69,16 @@ project "GameTraktor"
 	filter "configurations:Debug"
 		defines "GT_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines "GT_RELEASE"
 		optimize "On"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
 		defines "GT_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -106,5 +127,3 @@ project "Sandbox"
 	filter "configurations:Dist"
 		defines "GT_DIST"
 		optimize "On"
-
-
