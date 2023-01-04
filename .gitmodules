@@ -4,3 +4,6 @@
 [submodule "GameTraktor/vendor/GLFW"]
 	path = GameTraktor/vendor/GLFW
 	url = git@github.com:tylorkolbeck/glfw.git
+[submodule "GameTraktor/vendor/glm"]
+	path = GameTraktor/vendor/glm
+	url = git@github.com:g-truc/glm.git
