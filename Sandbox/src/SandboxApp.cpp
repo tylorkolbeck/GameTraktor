@@ -9,7 +9,7 @@ public:
 
 	void OnUpdate() override
 	{
-		GT_INFO("ExampleLayer::Update");
+
 	}
 
 	void OnEvent(GameTraktor::Event& event) override
@@ -23,6 +23,8 @@ class Sandbox : public GameTraktor::Application
 public:
 	Sandbox(){
 		PushLayer(new ExampleLayer());
+		PushOverlay(new GameTraktor::ImGuiLayer());
+
 	}
 	~Sandbox(){}
 };

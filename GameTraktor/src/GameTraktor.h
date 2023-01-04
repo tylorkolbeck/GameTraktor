@@ -4,7 +4,7 @@
 #include "GameTraktor/Application.h"
 #include "GameTraktor/Layer.h"
 #include "GameTraktor/Log.h"
-
+#include "GameTraktor/ImGui/ImGuiLayer.h"
 
 
 // ---- Entry Point ---------------------

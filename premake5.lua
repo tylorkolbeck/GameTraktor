@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameTraktor/vendor/GLFW/include"
 IncludeDir["Glad"] = "GameTraktor/vendor/Glad/include"
+IncludeDir["ImGui"] = "GameTraktor/vendor/imgui"
 
 include "GameTraktor/vendor/GLFW"
 include "GameTraktor/vendor/Glad"
+include "GameTraktor/vendor/imgui"
 
 project "GameTraktor"
 	location "GameTraktor"
@@ -40,13 +42,16 @@ project "GameTraktor"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -59,7 +64,8 @@ project "GameTraktor"
 		{
 			"GT_PLATFORM_WINDOWS",
 			"GT_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
 		}
 
 		postbuildcommands
@@ -98,6 +104,7 @@ project "Sandbox"
 	includedirs
 	{
 		"GameTraktor/vendor/spdlog/include",
+		"GameTraktor/vendor/GLFW/include",
 		"GameTraktor/src"
 	}
 
