@@ -9,7 +9,8 @@ public:
 
 	void OnUpdate() override
 	{
-
+		if (GameTraktor::Input::IsKeyPressed(GT_KEY_TAB))
+			GT_TRACE("TAB KEY PRESSED");
 	}
 
 	void OnEvent(GameTraktor::Event& event) override
